@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  border-width: 2px;
+  border-image: linear-gradient(180%, #969696 100%, #343434 100%) 2;
+  /* background: linear-gradient(to right, #969696 100%, #343434 100%); */
+  background-clip: padding-box;
+  background-color: #27292D;
+  border-style: solid;
+  padding: 24px;
+  width: fit-content;
+}

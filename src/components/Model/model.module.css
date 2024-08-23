@@ -1,0 +1,84 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleOut {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0.8); opacity: 0; }
+}
+
+@keyframes backgroundContract {
+  from { transform: scale(1); }
+  to { transform: scale(0.98); }
+}
+
+.modelBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s linear 0.3s;
+}
+
+.modelBackdrop.open {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+  animation: fadeIn 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+  backdrop-filter: blur(2px);
+  transition: backdrop-filter 0.3s ease-in-out;
+}
+
+.modalBackdrop.open::before {
+  animation: backgroundContract 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+}
+
+.modelBackdrop.close {
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(0px);
+  animation: fadeOut 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+  transition: backdrop-filter 0.3s ease-in-out;
+}
+
+.modelBackdrop.close::before {
+  animation: backgroundContract 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) reverse forwards;
+}
+
+.model {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.model.open {
+  opacity: 1;
+  animation: scaleIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.model.close {
+  transform: scale(0.7);
+  opacity: 0;
+  animation: scaleOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}

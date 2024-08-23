@@ -1,0 +1,41 @@
+
+.titleTypography {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  letter-spacing: 0.03em;
+  color: #6B6C70;
+}
+
+.titleTypographyContainer {
+  padding-top: 16px;
+}
+
+.subTitleTypography {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.78px;
+  color: #FFFFFF;
+}
+
+.subTitleTypographyContainer {
+  margin-top: 8px;
+  margin-bottom: 45px;
+}
+
+.bottomTypography {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  text-align: left;
+  color: #7F8084;
+  width: 100%;
+  padding-top: 12px;
+}
+
+.bottomSpanTypography {
+  color: #C5C7CA;
+}
