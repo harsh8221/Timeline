@@ -1,0 +1,24 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.titleTypography {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.78px;
+  text-align: left;
+  color: #C5C7CA;
+}
+
+.buttonContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.button {
+  width: 111px;
+}

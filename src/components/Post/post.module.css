@@ -1,0 +1,49 @@
+
+.topContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+}
+
+.nameTypography{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    color: #C5C7CA;
+}
+
+.timeTypography {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+    text-align: left;
+    color: #7F8084;
+}
+
+.commentContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+    text-align: left;
+    color: #7F8084;
+}
+
+.chatIconPadding {
+    padding-right: 8px;
+}
