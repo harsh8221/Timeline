@@ -14,7 +14,19 @@ const AuthForm = (props) => {
     submitButtonLabel = "Login",
     bottomText = "Not registered yet?",
     bottomTextButton = "Register",
+    onSubmit = () => { },
+    onBottomTextClick = () => { },
   } = props;
+
+  const handleSumbit = (data) => {
+    console.log(data);
+    onSubmit(data);
+  }
+
+  const handleBottomTextClick = () => {
+    console.log("Bottom text clicked");
+    onBottomTextClick();
+  }
 
   return (
     <Card>
@@ -23,9 +35,14 @@ const AuthForm = (props) => {
       <FormBuilder
         fields={fields}
         submitButtonLabel={submitButtonLabel}
-        onSubmit={(data) => console.log(data)}
+        onSubmit={handleSumbit}
       />
-      <button className={styles.bottomTypography}>{bottomText} <span className={styles.bottomSpanTypography}>{bottomTextButton} →</span></button>
+      <button
+        className={styles.bottomTypography}
+        onClick={handleBottomTextClick}
+      >
+        {bottomText} <span className={styles.bottomSpanTypography}>{bottomTextButton} →</span>
+      </button>
     </Card >
   );
 }

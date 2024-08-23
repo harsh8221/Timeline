@@ -1,13 +1,22 @@
-import React from 'react';
+import { useState } from 'react';
 
 import Post from '../Post';
 import CreatePost from '../CreatePost';
+import Login from '../Login';
+import Model from '../Model';
 
 import { data as postData } from '../../data/post';
 
 import styles from './timelinePage.module.css';
 
 const TimelinePage = (props) => {
+
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+  const handleToggleLogin = () => {
+    setIsLoginOpen(prevState => !prevState);
+  }
+
   return (
     <div
       className={styles.container}
@@ -15,7 +24,7 @@ const TimelinePage = (props) => {
       <p className={styles.titleTypography}>Hello Jane</p>
       <p className={styles.subTitleTypography}>How are you doing today? Would you like to share something with the community 🤗</p>
 
-      <CreatePost />
+      <CreatePost onClick={handleToggleLogin} />
 
       {
         postData.map((post, index) => (
@@ -31,6 +40,9 @@ const TimelinePage = (props) => {
           />
         ))
       }
+      <Model isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)}>
+        <Login onSuccess={handleToggleLogin} />
+      </Model>
     </div>
   )
 }

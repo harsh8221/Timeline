@@ -16,7 +16,11 @@ const FormConfig = [
   }
 ]
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+  const {
+    onSuccess = () => { },
+    onBottomTextClick = () => { },
+  } = props;
   return (
     <AuthForm
       title="WELCOME BACK"
@@ -25,6 +29,8 @@ const LoginForm = () => {
       submitButtonLabel="Login"
       bottomText="Not registered yet?"
       bottomTextButton="Register"
+      onSubmit={onSuccess}
+      onBottomTextClick={onBottomTextClick}
     />
   )
 }
