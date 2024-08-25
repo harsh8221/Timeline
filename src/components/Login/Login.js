@@ -2,16 +2,13 @@ import { useState } from 'react';
 
 import { LoginForm, SignUpForm } from '../LoginForm';
 
-const AUTHTYPE = {
-  LOGIN: 'Login',
-  SIGNUP: 'SignUp'
-}
+import { AUTHTYPE } from '../../constants/auth.constants';
 
 const Login = (props) => {
 
-  const { onSuccess } = props;
+  const { onSuccess, authType = AUTHTYPE.LOGIN } = props;
 
-  const [auth, setAuth] = useState(AUTHTYPE.LOGIN);
+  const [auth, setAuth] = useState(authType || AUTHTYPE.LOGIN);
 
   const handleAuthChange = (authType) => {
     setAuth(authType);

@@ -7,6 +7,8 @@ import Model from '../Model';
 
 import { data as postData } from '../../data/post';
 
+import { AUTHTYPE } from '../../constants/auth.constants';
+
 import styles from './timelinePage.module.css';
 
 const TimelinePage = (props) => {
@@ -41,7 +43,10 @@ const TimelinePage = (props) => {
         ))
       }
       <Model isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)}>
-        <Login onSuccess={handleToggleLogin} />
+        <Login
+          authType={AUTHTYPE.SIGNUP}
+          onSuccess={handleToggleLogin}
+        />
         <div
           className={styles.crossContainer}
           onClick={() => setIsLoginOpen(false)}
