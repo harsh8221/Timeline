@@ -4,6 +4,8 @@
   gap: 16px;
   max-width: 700px;
   margin: 0 auto;
+  padding-top: 200px;
+  padding-bottom: 50px;
 }
 
 .titleTypography {
@@ -21,4 +23,19 @@
   color: #7F8084;
   max-width: 580px;
   padding-bottom: 24px;
+}
+
+.crossContainer{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #131319;
+  border-radius: 50%;
 }

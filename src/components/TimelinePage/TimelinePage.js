@@ -42,6 +42,12 @@ const TimelinePage = (props) => {
       }
       <Model isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)}>
         <Login onSuccess={handleToggleLogin} />
+        <div
+          className={styles.crossContainer}
+          onClick={() => setIsLoginOpen(false)}
+        >
+          <img src="/cross.svg" alt='Cross logo' />
+        </div>
       </Model>
     </div>
   )
