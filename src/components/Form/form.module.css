@@ -16,6 +16,11 @@
   line-height: 16.94px;
   text-align: left;
   color: #C5C7CA;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .inputContainer {
@@ -34,4 +39,24 @@
   font-weight: 500;
   line-height: 14.52px;
   text-align: left;
+}
+
+.passwordField {
+  position: relative;
+  display: inline-block;
+}
+
+.passwordField input {
+  padding-right: 40px;
+}
+
+.passwordVisibilityButton {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }

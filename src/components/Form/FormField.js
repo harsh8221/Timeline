@@ -1,11 +1,17 @@
-import React from 'react';
+import { useState } from 'react';
 
 import styles from './form.module.css';
 
 const FormField = ({ type, name, value, label, onChange, error, placeholder }) => {
 
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(prevState => !prevState);
+  }
+
   const renderField = () => {
-    if (type === 'text' || type === 'email' || type === 'password') {
+    if (type === 'text' || type === 'email') {
       return (
         <input
           type={type}
@@ -16,7 +22,28 @@ const FormField = ({ type, name, value, label, onChange, error, placeholder }) =
           onChange={(e) => onChange(e.target.value)}
         />
       )
-    } else {
+    } else if (type === 'password') {
+      return (
+        <div className={styles.passwordField}>
+          <input
+            type={passwordVisible ? 'text' : 'password'}
+            name={name}
+            value={value}
+            placeholder={placeholder}
+            className={styles.inputContainer}
+            onChange={(e) => onChange(e.target.value)}
+          />
+          <button
+            type='button'
+            onClick={togglePasswordVisibility}
+            className={styles.passwordVisibilityButton}
+          >
+            {passwordVisible ? '👁️' : '👁️‍🗨️'}
+          </button>
+        </div>
+      )
+    }
+    else {
       return null;
     }
   }

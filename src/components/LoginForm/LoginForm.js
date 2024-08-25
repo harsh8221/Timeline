@@ -4,12 +4,20 @@ const FormConfig = [
   {
     label: 'Email or Username',
     name: 'email',
+    displayText: 'Email or Username',
     type: 'text',
     placeholder: 'Enter your email or username',
     required: true
   }, {
-    label: 'Password',
+    label: <>
+      <span>Password</span><button onClick={(e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        alert('Forgot password clicked');
+      }}>Forgot password?</button>
+    </>,
     name: 'password',
+    displayText: 'Password',
     type: 'password',
     placeholder: 'Enter your password',
     required: true

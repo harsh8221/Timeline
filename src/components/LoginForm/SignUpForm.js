@@ -1,26 +1,34 @@
-import AuthForm from './AuthForm'
+import AuthForm from './AuthForm';
+
+import { validateEmail, validatePasswordLength, validateUsernameLength } from '../../helpers/formValidator.helpers';
 
 const FormConfig = [
   {
     label: 'Email',
     name: 'email',
+    displayText: 'Email',
     type: 'email',
     placeholder: 'Enter your email',
-    required: true
+    required: true,
+    validate: validateEmail
   },
   {
     label: 'Username',
     name: 'username',
+    displayText: 'Username',
     type: 'text',
     placeholder: 'Choose a preferred username',
-    required: true
+    required: true,
+    validate: validateUsernameLength(8)
   },
   {
     label: 'Password',
     name: 'password',
+    displayText: 'Password',
     type: 'password',
     placeholder: 'Choose a strong password',
-    required: true
+    required: true,
+    validate: validatePasswordLength(8)
   }
 ]
 

@@ -38,11 +38,11 @@ const FormBuilder = ({ fields, onSubmit, submitButtonLabel }) => {
 
     fields.forEach(field => {
       if (field.required && !formState[field.name]) {
-        newErrors[field.name] = `${field.label} is required`;
+        newErrors[field.name] = `${field.displayText} is required`;
       } else if (field.validate) {
         const error = field.validate(formState[field.name]);
-        if (error) {
-          newErrors[field.name] = error;
+        if (!error) {
+          newErrors[field.name] = `${field.displayText} validation Failed`;
         }
       }
     });
